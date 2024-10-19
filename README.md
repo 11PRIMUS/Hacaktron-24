@@ -165,5 +165,42 @@ X = Dense(units=9, activation='softmax')(X)  # 9 classes for multi-class classif
 model = Model(inputs=base_model.input, outputs=X)
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 ```
+<ins>**🛠️ Installation**</ins><br />
+<li></li>
+To run this project, please ensure you have the following prerequisites installed:
 
+<li>Python</li> 
+<li>TensorFlow/Keras</li>
+<li>NumPy</li>
+<li>OpenCV</li>
+<li>Matplotlib</li>
+<li>scikit-learn</li>
+<p>
+ <br>
+</p>
+
+<ins>**🛠️ Code Snippet**</ins><br />
+
+```python
+from keras.callbacks import ModelCheckpoint
+
+# Define ModelCheckpoint to save the best model
+checkpoint = ModelCheckpoint('best.keras', monitor='val_accuracy', mode='max', save_best_only=True, verbose=1)
+
+# Train the model
+history = model.fit(
+    train_data,
+    steps_per_epoch=len(train_data),
+    epochs=30,
+    callbacks=[checkpoint]
+)
+```
+<p>
+ <br>
+</p>
+<ins>**📊 Results**</ins><br />
+
+| !(![WhatsApp Image 2024-10-04 at 09 57 26_41b0662f](https://github.com/user-attachments/assets/e0391cba-9fd2-41da-af40-ad26ea242243)
+) | !(![WhatsApp Image 2024-10-04 at 09 57 26_280558db](https://github.com/user-attachments/assets/38960efd-ffc3-41d5-9f75-b63d0b7175f2)
+)
 
