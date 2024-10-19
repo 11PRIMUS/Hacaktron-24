@@ -31,3 +31,16 @@ if uploaded_file is not None:
                     st.write(f"Likely Malignant: {breast_confidence:.2f}%")
                 else:
                     st.write(f"Likely benign: {100 - breast_confidence:.2f}%")
+        elif classification_type == "Brain Tumor":
+            with st.spinner("Classifying for brain tumor..."):
+                brain_tumor_prediction = brain_tumor_model.predict(img_array)[0][0]
+                brain_confidence = brain_tumor_prediction * 100
+                
+                if brain_tumor_prediction > 0.6:
+                    st.write(f"Brain Tumor detected with confidence: {brain_confidence:.2f}%")
+                else:
+                    st.write(f"No Brain Tumor detected with confidence: {100 - brain_confidence:.2f}%")
+                
+    except Exception as e:
+        st.error(f"Error processing the image: {e}")
+
