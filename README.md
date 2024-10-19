@@ -81,3 +81,52 @@ X=Dense(units=1,activation='sigmoid')(X)
 model=Model(base_model.input,X)
 model.summary()
 ```
+
+<ins>**📊 Results**</ins><br />
+
+![Image](https://github.com/user-attachments/assets/a8e59efa-4117-4506-a558-69bd64f12b25)
+
+<h1>🩺 Breast Cancer Detection using Machine Learning</h1>
+
+<ins>**🛠️ Technologies Used**</ins><br />
+
+<li>Python: The primary programming language used for implementation.</li>
+<li>Libraries:</li>
+<li>NumPy: For numerical computations.</li>
+<li>Pandas: For data manipulation and analysis.</li>
+<li>Matplotlib: For data visualization.</li>
+<li>Scikit-learn: For dataset handling, preprocessing, and model evaluation.</li>
+<li>TensorFlow/Keras: For building and training the neural network.</li>
+<p>
+ <br>
+</p>
+<ins>**🧠 Model Architecture**</ins><br />
+<p>
+ <br>
+</p>
+The neural network model is built using Keras and consists of the following layers:
+
+<li>Input Layer: 30 input features.</li>
+<li>Hidden Layer: 20 neurons with ReLU activation.</li>
+<li>Output Layer: 2 neurons with sigmoid activation for binary classification.</li>
+<p>
+ <br>
+</p>
+<ins>**🛠️ Installation**</ins><br />
+<p>
+ <br>
+</p>
+To run this project, please ensure you have the following prerequisites installed:
+
+<li>Python</li> 
+<li>TensorFlow/Keras</li>
+<li>NumPy</li>
+<li>Pandas</li>
+<li>Matplotlib</li>
+<li>scikit-learn</li>
+<p>
+ <br>
+</p>
+
+<ins>**🛠️ Code Snippet**</ins><br />
+
