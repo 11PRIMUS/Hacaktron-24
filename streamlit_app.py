@@ -20,3 +20,26 @@ if uploaded_file is not None:
         img = image.resize((224, 224))
         img_array = np.array(img) / 255.0  # Normalize pixel values
         img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+        
+        # Breast Cancer Prediction (Binary Classification)
+        with st.spinner("Classifying for breast cancer..."):
+            breast_cancer_prediction = breast_cancer_model.predict(img_array)[0][0]
+            breast_confidence = breast_cancer_prediction * 100
+            if breast_cancer_prediction > 0.5:
+                st.write(f"Breast Cancer detected with confidence: {breast_confidence:.2f}%")
+                st.success("Stopping further checks as cancer was detected.")
+                st.stop()  # Stop further checks
+
+            st.write(f"No Breast Cancer detected with confidence: {100 - breast_confidence:.2f}%")
+
+        # Brain Tumor Prediction (Binary Classification)
+        with st.spinner("Classifying for brain tumor..."):
+            brain_tumor_prediction = brain_tumor_model.predict(img_array)[0][0]
+            brain_confidence = brain_tumor_prediction * 100
+            if brain_tumor_prediction > 0.5:
+                st.write(f"Brain Tumor detected with confidence: {brain_confidence:.2f}%")
+            else:
+                st.write(f"No Brain Tumor detected with confidence: {100 - brain_confidence:.2f}%")
+            st.stop()
+    except Exceptiom as e:
+        st.error(f"error processing image:{e}")
