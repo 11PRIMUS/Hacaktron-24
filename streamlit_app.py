@@ -7,7 +7,7 @@ import tensorflow as tf
 try:
     breast_cancer_model = tf.keras.models.load_model(r'best_model.keras')  
     brain_tumor_model = tf.keras.models.load_model(r'brain_best.keras') 
-    skin_cancer_model = tf.keras.models.load_model(r'skin_best (1).keras')  
+    skin_cancer_model = tf.keras.models.load_model(r'skin_best.keras')  
 except Exception as e:
     st.error(f"Error loading models: {e}")
 
